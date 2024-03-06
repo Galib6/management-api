@@ -31,14 +31,6 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  scheduler: {
-    enabled: true,
-    config: {
-      contentTypes: {
-        "api::page.page": {},
-      },
-    },
-  },
   "entity-relationship-chart": {
     enabled: true,
     config: {
