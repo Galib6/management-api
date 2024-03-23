@@ -807,45 +807,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface PluginSchedulerScheduler extends Schema.CollectionType {
-  collectionName: 'scheduler_scheduler';
-  info: {
-    collectionName: 'scheduler';
-    singularName: 'scheduler';
-    pluralName: 'scheduler';
-    displayName: 'scheduler';
-    description: '';
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
-  };
-  attributes: {
-    uid: Attribute.String & Attribute.Required;
-    entryId: Attribute.BigInteger & Attribute.Required;
-    type: Attribute.Enumeration<['publish', 'archive']> & Attribute.Required;
-    datetime: Attribute.DateTime;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'plugin::scheduler.scheduler',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'plugin::scheduler.scheduler',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -865,7 +826,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::scheduler.scheduler': PluginSchedulerScheduler;
     }
   }
 }
