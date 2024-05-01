@@ -368,6 +368,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     singularName: 'project';
     pluralName: 'projects';
     displayName: 'project';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -376,6 +377,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     title: Attribute.String;
     description: Attribute.Text;
     recentActivity: Attribute.String;
+    assignedMember: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
