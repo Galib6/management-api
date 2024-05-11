@@ -378,6 +378,11 @@ export interface ApiProjectProject extends Schema.CollectionType {
     description: Attribute.Text;
     recentActivity: Attribute.String;
     assignedMember: Attribute.JSON;
+    user: Attribute.Relation<
+      'api::project.project',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -402,6 +407,7 @@ export interface ApiTestTest extends Schema.CollectionType {
     singularName: 'test';
     pluralName: 'tests';
     displayName: 'test';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -823,6 +829,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'manyToOne',
       'plugin::users-permissions.role'
+    >;
+    project: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::project.project'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
