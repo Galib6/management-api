@@ -20,7 +20,7 @@ jobs:
         run: docker build -t management-api .
 
       - name: Log in to DigitalOcean
-        run: echo "${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}" --password-stdin registry.digitalocean.com
+        run: echo "${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}" | docker login -u "${{ secrets.DIGITALOCEAN_USER }}" --password-stdin registry.digitalocean.com
 
       - name: Push Docker image
         run: |
