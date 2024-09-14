@@ -35,6 +35,9 @@ jobs:
           echo "SMTP_USERNAME=${{ secrets.PROD_SMTP_USERNAME }}" >> .env
           echo "SMTP_PASSWORD=${{ secrets.PROD_SMTP_PASSWORD }}" >> .env
 
+      - name: Print .env file
+        run: cat .env
+
       - name: Logging to docker
         run: docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
 
