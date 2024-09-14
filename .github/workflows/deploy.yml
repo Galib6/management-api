@@ -18,11 +18,11 @@ jobs:
         env:
           HOST: 0.0.0.0
           PORT: 1337
-          APP_KEYS: ${{ secrets.PROD_APP_KEYS }}
-          API_TOKEN_SALT: ${{ secrets.PROD_API_TOKEN_SALT }}
-          TRANSFER_TOKEN_SALT: ${{ secrets.PROD_TRANSFER_TOKEN_SALT }}
-          ADMIN_JWT_SECRET: ${{ secrets.PROD_ADMIN_JWT_SECRET }}
-          JWT_SECRET: ${{ secrets.PROD_JWT_SECRET }}
+          APP_KEYS: X7J2zqEz7lF4S3eUu/0oPA==,ozMEjaJQnpWqYp7U93PRGQ==,B08zT1xiohA6MY123oVOIQ==,4fs5wVCVEclQQsxXN7u+CA==
+          API_TOKEN_SALT: ciKbD1vxcaMv6/478lyWXA==
+          TRANSFER_TOKEN_SALT: RX61K63nXURG9tjuoTypyQ==
+          ADMIN_JWT_SECRET: +vBkow/HIS0tRlYhEoSSbA==
+          JWT_SECRET: dLsYivt//6tz/JrKuA6rCg==
 
           DATABASE_CLIENT: postgres
           DATABASE_HOST: ${{ secrets.PROD_DATABASE_HOST }}
