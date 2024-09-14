@@ -35,15 +35,6 @@ jobs:
           CLOUDINARY_KEY: ${{ secrets.PROD_CLOUDINARY_KEY }}
           CLOUDINARY_SECRET: ${{ secrets.PRODCLOUDINARY_SECRET }}
 
-          # DATABASE_SSL: true
-          # DATABASE_SSL_REJECT_UNAUTHORIZED: false
-          # DATABASE_SSL_CA: db.crt
-
-          # AWS_ENDPOINT: sgp1.digitaloceanspaces.com
-          # AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
-          # AWS_ACCESS_SECRET: ${{ secrets.PROD_AWS_ACCESS_SECRET }}
-          # AWS_BUCKET: unispaces/marketearz
-
           SMTP_HOST: ${{ secrets.PROD_SMTP_HOST }}
           SMTP_PORT: ${{ secrets.PROD_SMTP_PORT }}
           SMTP_USERNAME: ${{ secrets.PROD_SMTP_USERNAME }}
