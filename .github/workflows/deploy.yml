@@ -14,31 +14,26 @@ jobs:
 
       - name: Generate .env
         run: |
-          envsubst "`printf '${%s} ' $(sh -c "env|cut -d'=' -f1")`" < ./.env.example > ./.env
-        env:
-          HOST: 0.0.0.0
-          PORT: 1337
-          APP_KEYS: ${{ secrets.PROD_APP_KEYS }}
-          API_TOKEN_SALT: ${{ secrets.PROD_API_TOKEN_SALT }}
-          TRANSFER_TOKEN_SALT: ${{ secrets.PROD_TRANSFER_TOKEN_SALT }}
-          ADMIN_JWT_SECRET: ${{ secrets.PROD_ADMIN_JWT_SECRET }}
-          JWT_SECRET: ${{ secrets.PROD_JWT_SECRET }}
-
-          DATABASE_CLIENT: postgres
-          DATABASE_HOST: ${{ secrets.PROD_DATABASE_HOST }}
-          DATABASE_PORT: ${{ secrets.PROD_DATABASE_PORT }}
-          DATABASE_NAME: ${{ secrets.PROD_DATABASE_NAME }}
-          DATABASE_USERNAME: ${{ secrets.PROD_DATABASE_USERNAME }}
-          DATABASE_PASSWORD: ${{ secrets.PROD_DATABASE_PASSWORD }}
-
-          CLOUDINARY_NAME: ${{ secrets.PROD_CLOUDINARY_NAME }}
-          CLOUDINARY_KEY: ${{ secrets.PROD_CLOUDINARY_KEY }}
-          CLOUDINARY_SECRET: ${{ secrets.PRODCLOUDINARY_SECRET }}
-
-          SMTP_HOST: ${{ secrets.PROD_SMTP_HOST }}
-          SMTP_PORT: ${{ secrets.PROD_SMTP_PORT }}
-          SMTP_USERNAME: ${{ secrets.PROD_SMTP_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.PROD_SMTP_PASSWORD }}
+          echo "HOST=0.0.0.0" > .env
+          echo "PORT=1337" >> .env
+          echo "APP_KEYS=${{ secrets.PROD_APP_KEYS }}" >> .env
+          echo "API_TOKEN_SALT=${{ secrets.PROD_API_TOKEN_SALT }}" >> .env
+          echo "TRANSFER_TOKEN_SALT=${{ secrets.PROD_TRANSFER_TOKEN_SALT }}" >> .env
+          echo "ADMIN_JWT_SECRET=${{ secrets.PROD_ADMIN_JWT_SECRET }}" >> .env
+          echo "JWT_SECRET=${{ secrets.PROD_JWT_SECRET }}" >> .env
+          echo "DATABASE_CLIENT=postgres" >> .env
+          echo "DATABASE_HOST=${{ secrets.PROD_DATABASE_HOST }}" >> .env
+          echo "DATABASE_PORT=${{ secrets.PROD_DATABASE_PORT }}" >> .env
+          echo "DATABASE_NAME=${{ secrets.PROD_DATABASE_NAME }}" >> .env
+          echo "DATABASE_USERNAME=${{ secrets.PROD_DATABASE_USERNAME }}" >> .env
+          echo "DATABASE_PASSWORD=${{ secrets.PROD_DATABASE_PASSWORD }}" >> .env
+          echo "CLOUDINARY_NAME=${{ secrets.PROD_CLOUDINARY_NAME }}" >> .env
+          echo "CLOUDINARY_KEY=${{ secrets.PROD_CLOUDINARY_KEY }}" >> .env
+          echo "CLOUDINARY_SECRET=${{ secrets.PRODCLOUDINARY_SECRET }}" >> .env
+          echo "SMTP_HOST=${{ secrets.PROD_SMTP_HOST }}" >> .env
+          echo "SMTP_PORT=${{ secrets.PROD_SMTP_PORT }}" >> .env
+          echo "SMTP_USERNAME=${{ secrets.PROD_SMTP_USERNAME }}" >> .env
+          echo "SMTP_PASSWORD=${{ secrets.PROD_SMTP_PASSWORD }}" >> .env
 
       - name: Logging to docker
         run: docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
