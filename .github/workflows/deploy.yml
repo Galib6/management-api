@@ -70,7 +70,7 @@ jobs:
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USER }}
-          key: ${{ secrets.PROD_PASSWORD }}
+          password: ${{ secrets.PROD_PASSWORD }}
           script: |
             echo "Logging to docker hub"
             docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
