@@ -30,9 +30,14 @@ jobs:
           DATABASE_NAME: ${{ secrets.PROD_DATABASE_NAME }}
           DATABASE_USERNAME: ${{ secrets.PROD_DATABASE_USERNAME }}
           DATABASE_PASSWORD: ${{ secrets.PROD_DATABASE_PASSWORD }}
-          DATABASE_SSL: true
-          DATABASE_SSL_REJECT_UNAUTHORIZED: false
-          DATABASE_SSL_CA: db.crt
+
+          CLOUDINARY_NAME: ${{ secrets.PROD_CLOUDINARY_NAME }}
+          CLOUDINARY_KEY: ${{ secrets.PROD_CLOUDINARY_KEY }}
+          CLOUDINARY_SECRET: ${{ secrets.PRODCLOUDINARY_SECRET }}
+
+          # DATABASE_SSL: true
+          # DATABASE_SSL_REJECT_UNAUTHORIZED: false
+          # DATABASE_SSL_CA: db.crt
 
           # AWS_ENDPOINT: sgp1.digitaloceanspaces.com
           # AWS_ACCESS_KEY_ID: ${{ secrets.PROD_AWS_ACCESS_KEY_ID }}
