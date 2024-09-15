@@ -105,7 +105,7 @@ jobs:
 
             echo "Starting latest build"
             docker run -e NODE_ENV=production -d \
-              --restart always --network host \
+              --restart always \
               -dit --name management-api \
               -p 1337:1337 \
               --name management-api \
